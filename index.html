@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZonaPC Store V2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🖥️ ZonaPC Store</div>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">PCs</a>
+        <a href="#videojuegos">Videojuegos</a>
+        <a href="#celulares">Celulares</a>
+        <a href="#accesorios">Accesorios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section id="inicio" class="hero">
+    <h1>ZonaPC Store V2</h1>
+    <p>Tecnología Gamer y Profesional</p>
+    <button onclick="mensaje()">Ver ofertas</button>
+</section>
+
+<section id="productos" class="section">
+    <h2>💻 PCs Gamer y Laptops</h2>
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5" alt="Computador Gamer CyberMax RTX">
+            <h3>CyberMax RTX</h3>
+            <p>Intel i7 - RTX 4060 - 16GB RAM</p>
+            <strong>$4.500.000</strong>
+            <button onclick="comprar('CyberMax RTX', 4500000)">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d" alt="Computador Master Gaming">
+            <h3>Master Gaming</h3>
+            <p>Intel i9 - RTX 5080 - 32GB RAM</p>
+            <strong>$8.000.000</strong>
+            <button onclick="comprar('Master Gaming', 8000000)">Comprar</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="videojuegos" class="section">
+    <h2>🎮 Videojuegos</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="EA FC 26">
+            <h3>EA FC 26</h3>
+            <p>PS5 - Xbox - PC</p>
+            <strong>$280.000</strong>
+            <button onclick="comprar('EA FC 26', 280000)">Comprar</button>
+        </div>
+    </div>
+</section>
+
+<section id="celulares" class="section">
+    <h2>📱 Celulares</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97" alt="iPhone 16 Pro">
+            <h3>iPhone 16 Pro</h3>
+            <p>256GB</p>
+            <strong>$6.500.000</strong>
+            <button onclick="comprar('iPhone 16 Pro', 6500000)">Comprar</button>
+        </div>
+    </div>
+</section>
+
+<section id="accesorios" class="section">
+    <h2>🎧 Accesorios Gamer</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7" alt="Mouse Gamer RGB">
+            <h3>Mouse RGB</h3>
+            <p>Alta precisión</p>
+            <strong>$120.000</strong>
+            <button onclick="comprar('Mouse RGB', 120000)">Comprar</button>
+        </div>
+    </div>
+</section>
+
+<section class="form">
+    <h2>🛒 Realizar Compra</h2>
+
+    <input type="text" id="nombre" placeholder="Ingrese su nombre">
+    <input type="email" id="correo" placeholder="Ingrese su correo">
+
+    <select id="envio">
+        <option value="">Seleccione envío</option>
+        <option>Coordinadora</option>
+        <option>Servientrega</option>
+        <option>Interrapidísimo</option>
+    </select>
+
+    <select id="metodo">
+        <option value="">Método de pago</option>
+        <option>Tarjeta Crédito</option>
+        <option>Nequi</option>
+        <option>Daviplata</option>
+        <option>Transferencia</option>
+    </select>
+
+    <button onclick="facturar()">Finalizar Compra</button>
+</section>
+
+<section id="factura" class="factura"></section>
+
+<section id="contacto" class="contacto">
+    <h2>📩 Contacto</h2>
+    <p>Email: contacto@zonapcstore.com</p>
+    <p>Teléfono: +57 300 000 0000</p>
+</section>
+
+<footer>
+    <p>© 2026 ZonaPC Store V2 - Desarrollado por Santiago Salinas</p>
+</footer>
+
+<script src="logica.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#eef2ff;
+}
+
+header{
+    background:#1e1b4b;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero button,
+.card button,
+.form button{
+    border:none;
+    padding:12px 20px;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.hero button,
+.form button{
+    background:#06b6d4;
+}
+
+.section{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3,
+.card p,
+.card strong{
+    margin:10px;
+}
+
+.card button{
+    background:#7c3aed;
+    margin-bottom:20px;
+}
+
+.form,
+.factura,
+.contacto{
+    background:white;
+    max-width:500px;
+    margin:30px auto;
+    padding:20px;
+    border-radius:20px;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+}
+
+footer{
+    background:#1e1b4b;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
