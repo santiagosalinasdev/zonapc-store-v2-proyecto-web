@@ -56,24 +56,57 @@ function facturar() {
     const iva = precio * 0.19;
     const total = precio + iva;
 
-    document.getElementById('factura').innerHTML = `
-        <h2>🧾 FACTURA FINAL</h2>
-        <hr><br>
+    // Datos que se enviarán a la API
+    const compra = {
+        cliente: nombre,
+        correo: correo,
+        producto: producto,
+        subtotal: precio,
+        iva: iva,
+        total: total,
+        envio: envio,
+        metodoPago: metodo
+    };
 
-        <p><strong>Cliente:</strong> ${nombre}</p>
-        <p><strong>Correo:</strong> ${correo}</p>
-        <p><strong>Producto:</strong> ${producto}</p>
-        <p><strong>Subtotal:</strong> $${precio.toLocaleString('es-CO')}</p>
-        <p><strong>IVA (19%):</strong> $${iva.toLocaleString('es-CO')}</p>
-        <p><strong>Total:</strong> $${total.toLocaleString('es-CO')}</p>
-        <p><strong>Envío:</strong> ${envio}</p>
-        <p><strong>Método de pago:</strong> ${metodo}</p>
+    // API de prueba
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(compra)
+    })
+    .then(response => response.json())
+    .then(data => {
 
-        <h3>✅ Compra Exitosa</h3>
-    `;
+        document.getElementById('factura').innerHTML = `
+            <h2>🧾 FACTURA FINAL</h2>
+            <hr><br>
 
-    document.getElementById('nombre').value = '';
-    document.getElementById('correo').value = '';
-    document.getElementById('envio').value = '';
-    document.getElementById('metodo').value = '';
+            <p><strong>Cliente:</strong> ${nombre}</p>
+            <p><strong>Correo:</strong> ${correo}</p>
+            <p><strong>Producto:</strong> ${producto}</p>
+            <p><strong>Subtotal:</strong> $${precio.toLocaleString('es-CO')}</p>
+            <p><strong>IVA (19%):</strong> $${iva.toLocaleString('es-CO')}</p>
+            <p><strong>Total:</strong> $${total.toLocaleString('es-CO')}</p>
+            <p><strong>Envío:</strong> ${envio}</p>
+            <p><strong>Método de pago:</strong> ${metodo}</p>
+
+            <h3>✅ Compra Exitosa</h3>
+            <p>ID Pedido: ${data.id}</p>
+        `;
+
+        // Limpiar formulario
+        document.getElementById('nombre').value = '';
+        document.getElementById('correo').value = '';
+        document.getElementById('envio').value = '';
+        document.getElementById('metodo').value = '';
+
+        producto = '';
+        precio = 0;
+    })
+    .catch(error => {
+        console.error(error);
+        alert('Error al conectar con la API');
+    });
 }
